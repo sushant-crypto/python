@@ -1,195 +1,528 @@
 <!DOCTYPE html>
-<html lang="en" class="transition">
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Python Programming Concepts</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .output-block {
-            background-color: #2d3748;
-            color: #e2e8f0;
-            padding: 0.75rem 1rem;
-            border-radius: 0.375rem;
-            margin-top: 0.5rem;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 0.875rem;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Python</title>
+  <style>
+    :root {
+      --bg: #fdfdfd;
+      --text: #222;
+      --accent: #0077cc;
+      --code-bg: #f0f0f0;
+      --header-bg: #222;
+      --header-text: #fff;
+      --footer-bg: #222;
+      --footer-text: #fff;
+    }
+
+    body.dark {
+      --bg: #1e1e2f;
+      --text: #eee;
+      --accent: #66ccff;
+      --code-bg: #2c2c3e;
+      --header-bg: #111;
+      --header-text: #fff;
+      --footer-bg: #111;
+      --footer-text: #fff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+      background-color: var(--header-bg);
+      color: var(--header-text);
+      padding: 40px 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    header p {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+
+    .toggle-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    main {
+      max-width: 800px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    section {
+      margin-bottom: 50px;
+    }
+
+    section h2 {
+      font-size: 1.8em;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    section ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    pre {
+      background-color: var(--code-bg);
+      padding: 10px;
+      border-left: 4px solid var(--accent);
+      overflow-x: auto;
+    }
+
+    footer {
+      background-color: var(--footer-bg);
+      color: var(--footer-text);
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
 </head>
-<body class="bg-gray-50">
+<body>
+  <header>
+    <h1>Python Course</h1>
+    <h1><a href="https://sushant-crypto.github.io/my-projects/" target="_blank" style="color: inherit; text-decoration: underline;">ℙ𝕚𝕩𝕖𝕝𝕊𝕖𝕟𝕤𝕖𝕚</a></h1>
+    <p>A complete journey from basics to mastery — with examples</p>
+    <button class="toggle-btn" onclick="toggleTheme()">Theme Mode</button>
+  </header>
 
-    <!-- Header Section -->
-    <header class="bg-white shadow-sm">
-        <div class="max-w-4xl mx-auto py-6 px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-3xl font-bold text-gray-900">Python Programming Concepts Explained</h1>
-            <p class="mt-2 text-gray-600">A complete breakdown of key topics with code examples and their results.</p>
+  <main>
+    <section>
+      <h2>Introduction to Python</h2>
+      <ul>
+       <li>High-level, interpreted programming language.</li>
+      <li>Designed for readability and simplicity.</li>
+      <li>Widely used in web, data science, automation, and AI.</li>
+      <li>Created by Guido van Rossum in the late 1980s.</li>
+      
+      <pre># Python is easy to read and write
+print("Hello, Python!")
 
-            <!-- 🌗 Theme Toggle Button -->
-            <div class="text-right mt-4">
-                <button id="theme-toggle" class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-100 px-4 py-2 rounded shadow hover:bg-gray-300 dark:hover:bg-gray-600 transition">
-                    Theme
-                </button>
-            </div>
-        </div>
-    </header>
+# Used in many fields
+web = "Django"
+data = "Pandas"
+ai = "TensorFlow"
 
-    <!-- Main Content Area -->
-    <main class="py-10">
-        <section id="topics-container" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8" aria-label="Python Programming Topics">
-            <!-- Topics will be dynamically loaded here -->
-        </section>
+print(web, data, ai)
+</pre>
+    </section>
 
-        <!-- Navigation Button -->
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 text-center">
-            <a href="newpage.html" class="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-md shadow hover:bg-blue-700 transition">
-                Continue to More Topics →
-            </a>
-        </div>
-    </main>
+    <section>
+      <h2>Unique Features</h2>
+      <ul>
+        <li>Dynamic typing and automatic memory management.</li>
+        <li>Extensive standard library and third-party packages.</li>
+        <li>Supports multiple paradigms: procedural, object-oriented, functional.</li>
+        <li>Easy integration with other languages like C/C++ and Java.</li>
+      </ul>
+      <pre># Dynamic typing
+x = 10
+x = "Python"   # same variable, different type
 
-    <!-- Footer Section -->
-    <footer class="bg-gray-800 mt-12">
-        <div class="max-w-4xl mx-auto py-6 px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-gray-400">This page is produced to provide basic knowledge of Python programming.</p>
-            <p class="text-gray-400">ℙ𝕚𝕩𝕖𝕝𝕊𝕖𝕟𝕤𝕖𝕚</p>
-        </div>
-    </footer>
+# Standard library
+import random
+print(random.randint(1, 5))
 
-    <!-- 🧠 Script to Load Topics -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const topics = [
-                {
-                    number: 13,
-                    title: "13.Introduction to Python",
-                    description: "Python is a high-level, interpreted language known for its simplicity and readability.",
-                    points: [
-                        "Created by Guido van Rossum in the late 1980s.",
-                        "Emphasizes code readability with clean syntax.",
-                        "Supports multiple programming paradigms.",
-                        "Widely used in web, data science, AI, and automation."
-                    ],
-                    code: `# Python program to print Hello World\nprint("Hello, World!")`,
-                    output: `Hello, World!`
-                },
-                {
-                    number: 14,
-                    title: "14.Python Data Types",
-                    description: "Python supports various data types like int, float, str, bool, list, tuple, set, and dict.",
-                    points: [
-                        "int, float, str, and bool are basic types.",
-                        "list, tuple, set, and dict are collection types.",
-                        "Use type() to check a variable’s type.",
-                        "Supports dynamic typing and type conversion."
-                    ],
-                    code: `x = 10\ny = 3.14\nname = "Alice"\nis_valid = True\nprint(type(x), type(y), type(name), type(is_valid))`,
-                    output: `<class 'int'> <class 'float'> <class 'str'> <class 'bool'>`
-                },
-                {
-                    number: 15,
-                    title: "15.Conditional Statements",
-                    description: "Python uses if, elif, and else to control flow based on conditions.",
-                    points: [
-                        "if checks a condition and executes code if true.",
-                        "elif allows multiple conditions to be checked.",
-                        "else runs when all previous conditions are false.",
-                        "Supports nested conditions for complex logic."
-                    ],
-                    code: `num = -5\nif num > 0:\n    print("Positive")\nelif num < 0:\n    print("Negative")\nelse:\n    print("Zero")`,
-                    output: `Negative`
-                },
-                {
-                    number: 16,
-                    title: "16.Loops in Python",
-                    description: "Python supports for and while loops for iteration.",
-                    points: [
-                        "for loop iterates over sequences like lists or ranges.",
-                        "while loop runs as long as a condition is true.",
-                        "Nested loops allow iteration within iteration.",
-                        "Use break and continue to control loop flow."
-                    ],
-                    code: `for i in range(1, 6):\n    print(i, end=" ")\n\ni = 1\nwhile i <= 5:\n    print(i, end=" ")\n    i += 1`,
-                    output: `1 2 3 4 5 1 2 3 4 5`
-                },
-                {
-                    number: 17,
-                    title: "17.User Defined Functions",
-                    description: "Functions are defined using the def keyword and help modularize code.",
-                    points: [
-                        "Use def to define a function with optional parameters.",
-                        "Functions can return values using return.",
-                        "Promotes code reuse and organization.",
-                        "Supports default and keyword arguments."
-                    ],
-                    code: `def greet(name):\n    return f"Hello, {name}!"\n\nprint(greet("Alice"))`,
-                    output: `Hello, Alice!`
-                },
-                {
-                    number: 18,
-                    title: "18.Lambda Function",
-                    description: "Lambda functions are anonymous functions used for short operations.",
-                    points: [
-                        "Defined using the lambda keyword.",
-                        "Used for simple one-line functions.",
-                        "Often used with map(), filter(), and reduce().",
-                        "Cannot contain multiple expressions or statements."
-                    ],
-                    code: `square = lambda x: x * x\nprint(square(5))`,
-                    output: `25`
-                },
-                {
-                    number: 19,
-                    title: "19.Importing Modules – Math Module",
-                    description: "Python's math module provides access to mathematical functions.",
-                    points: [
-                        "Use import math to access the module.",
-                        "Provides functions like sqrt(), pow(), and constants like pi.",
-                        "Helps perform advanced mathematical operations.",
-                        "Can import specific functions using from-import syntax."
-                    ],
-                    code: `import math\nprint(math.sqrt(16))\nprint(math.pi)`,
-                    output: `4.0\n3.141592653589793`
-                }
-            ];
+# Functional style
+nums = [1, 2, 3]
+print(list(map(lambda x: x*2, nums)))
 
-            const container = document.getElementById('topics-container');
+# Integration example (just a placeholder)
+# Can use C via ctypes or C++ via Boost.Python
+</pre>
+    </section>
 
-            topics.forEach(topic => {
-                const pointsHTML = topic.points
-                    ? `<ul class="mt-3 list-disc list-inside text-gray-600">${topic.points.map(p => `<li>${p}</li>`).join('')}</ul>`
-                    : '';
+    <section>
+      <h2>Python Versions</h2>
+      <ul>
+        <li>Major versions: Python 2.x (legacy) and Python 3.x (current).</li>
+        <li>Python 3 introduced better Unicode support and syntax improvements.</li>
+        <li>Frequent updates with new features and performance enhancements.</li>
+        <li>Use python --version to check installed version.</li>
+      </ul>
+      <pre># Check version
+import sys
+print(sys.version)     # Full version info
 
-                const topicElement = document.createElement('div');
-                topicElement.className = 'bg-white rounded-lg shadow-md overflow-hidden';
+# Terminal command
+# python --version     # Shows version like Python 3.11.5
+</pre>
+    </section>
 
-                topicElement.innerHTML = `
-                    <div class="p-6">
-                        <h2 class="text-2xl font-bold text-gray-800">${topic.title}</h2>
-                        <p class="mt-3 text-gray-600" aria-label="Topic Description">${topic.description}</p>
-                        ${pointsHTML}
-                        <div class="mt-4">
-                            <h3 class="font-semibold text-gray-700 mb-2">Python Code Example:</h3>
-                            <pre class="bg-gray-100 p-4 rounded-md text-gray-800"><code>${topic.code}</code></pre>
-                        </div>
-                        <div class="mt-4">
-                            <h3 class="font-semibold text-gray-700 mb-2">Output:</h3>
-                            <div class="output-block">${topic.output}</div>
-                        </div>
-                    </div>
-                `;
+    <section>
+      <h2>Install Python and Environment Setup</h2>
+      <ul>
+        <li>Download from python.org.</li>
+        <li>Use IDEs like PyCharm, VS Code, or Jupyter Notebook.</li>
+        <li>Set up PATH variable for command-line access.</li>
+        <li>Install packages via pip (Python package manager).</li>
+      </ul>
+      <pre># Install packages
+# Run in terminal or command prompt
+pip install numpy
+pip install flask
 
-                container.appendChild(topicElement);
-            });
+# Check Python version
+python --version
 
-            // 🌙 Theme Toggle Script
-            const toggleBtn = document.getElementById('theme-toggle');
-            const html = document.documentElement;
+# Example setup in VS Code
+# Create .py file and start coding
+print("Setup complete!")
+</pre>
+    </section>
 
-            if (localStorage.getItem('
+    <section>
+      <h2>First Python Program</h2>
+      <ul>
+        <li>Use print("Hello, World!") to start.</li>
+        <li>Save file with .py extension.</li>
+        <li>Run via terminal: python filename.py.</li>
+        <li>Dynamic assignment</li>
+      </ul>
+      <pre># First Python program
+print("Hello, World!")
+  </pre>
+    </section>
+
+    <section>
+      <h2>Python Identifiers, Keywords and Indentation</h2>
+      <ul>
+        <li>Identifiers: names for variables, functions, etc. (must not start with digits).</li>
+        <li>Keywords: reserved words like if, else, def, class.</li>
+        <li>Case-sensitive language.</li>
+        <li>Indentation defines code blocks (no braces {}).</li>
+      </ul>
+      <pre># Identifier
+score = 95
+
+# Keyword
+if score > 90:
+    print("Excellent")
+
+# Case-sensitive
+Score = 80
+print(score)  # prints 95
+print(Score)  # prints 80
+
+# Indentation
+def greet():
+    print("Hi!")
+
+greet()
+</pre>
+    </section>
+
+    <section>
+      <h2>Python Data Types</h2>
+      <ul>
+        <li>Basic types: int, float, str, bool.</li>
+        <li>Collection types: list, tuple, set, dict.</li>
+        <li>Use type() to check data type.</li>
+        <li>Supports type conversion: int(), str(), etc.</li>
+      </ul>
+      <pre># Basic types
+x = 5           # int
+y = 3.5         # float
+z = "Hi"        # str
+flag = True     # bool
+
+# Collections
+lst = [1, 2]
+tpl = (3, 4)
+st = {5, 6}
+dct = {"a": 7}
+
+# type check & conversion
+print(type(x))
+print(int("8"))
+</pre>
+    </section>
+
+    <section>
+      <h2>Variables</h2>
+      <ul>
+        <li>List: mutable</li>
+        <li>Assignment: x = 10, name = "PixelSensei".</li>
+        <li>Variables are references to objects..</li>
+        <li>Use meaningful names for clarity.</li>
+      </ul>
+      <pre>x = 10
+name = "PixelSensei"
+age = x
+print(name, age)
+</pre>
+    </section>
+
+    <section>
+      <h2>Operators in Python</h2>
+      <ul>
+        <li>Assignment: =, +=, -=, etc.</li>
+        <li>Logical: and, or, not.</li>
+        <li>Arithmetic: +, -, *, /, %, **.</li>
+        <li>Comparison: ==, !=, <, >, <=, >=.</li>
+      </ul>
+      <pre>x = 5
+x += 2         # Assignment
+
+a = True
+b = False
+print(a and not b)    # Logical
+
+print(3 + 2 * 4)      # Arithmetic
+
+print(x == 7)         # Comparison
+</pre>
+    </section>
+
+    <section>
+      <h2>Taking User Input (Console)</h2>
+      <ul>
+        <li>Use input() for string input.</li>
+        <li>Convert input: int(input()), float(input()).</li>
+        <li>Prompt message: input("Enter your name: ").</li>
+        <li>All input is string by default.</li>
+      </ul>
+      <pre>name = input("Enter your name: ")
+age = int(input("Enter your age: "))
+print("Hi", name, "- Age:", age)
+</pre>
+    </section>
+    
+    <section>
+      <h2>Conditional Statements</h2>
+      <ul>
+        <li>if condition:, else:, elif condition:.</li>
+        <li>Nested if allows multi-level decisions.</li>
+        <li>Use logical operators for complex conditions.</li>
+        <li>Indentation is crucial for structure.</li>
+      </ul>
+      <pre>x = 20
+
+if x > 10:
+    if x < 30:
+        print("Between 10 and 30")
+    else:
+        print("Above 30")
+elif x == 10:
+    print("Exactly 10")
+else:
+    print("Below 10")
+</pre>
+    </section>
+    
+    <section>
+      <h2>List, Tuple, Sets and Dictionary</h2>
+      <ul>
+        <li>List: ordered, mutable, [1, 2, 3].</li>
+        <li>Tuple: ordered, immutable, (1, 2, 3).</li>
+        <li>Set: unordered, unique items, {1, 2, 3}.</li>
+        <li>Dict: key-value pairs, {"name": "PixelSensei"}.</li>
+      </ul>
+      <pre>lst = [1, 2, 3]
+tpl = (4, 5, 6)
+st = {7, 8, 8}
+dct = {"name": "PixelSensei", "age": 25}
+
+print(lst[0], tpl[1], st, dct["name"])
+</pre>
+    </section>
+    
+    <section>
+      <h2>Understanding Iterators</h2>
+      <ul>
+        <li>Objects that implement __iter__() and __next__().</li>
+        <li>Used in loops and comprehensions.</li>
+        <li>Built-in functions like iter() and next().</li>
+        <li>Enables lazy evaluation and memory efficiency.</li>
+      </ul>
+      <pre>nums = [10, 20, 30]
+it = iter(nums)
+print(next(it))   # 10
+print(next(it))   # 20
+
+for n in nums:
+    print(n)
+</pre>
+    </section>
+    
+    <section>
+      <h2>Generators</h2>
+      <ul>
+        <li>Defined using yield instead of return.</li>
+        <li>Produce items one at a time.</li>
+        <li>More memory-efficient than lists.</li>
+        <li>Ideal for large data streams.</li>
+      </ul>
+      <pre>def count_up(n):
+    for i in range(n):
+        yield i
+
+gen = count_up(3)
+print(next(gen))  # 0
+print(next(gen))  # 1
+</pre>
+    </section>
+    
+    <section>
+      <h2>Comprehensions</h2>
+      <ul>
+        <li>Compact syntax for creating collections.</li>
+        <li>List: [x for x in range(5)].</li>
+        <li>Dict: {x: x**2 for x in range(5)}.</li>
+        <li>Set: {x for x in range(5)}.</li>
+      </ul>
+      <pre>lst = [x for x in range(5)]
+dct = {x: x**2 for x in range(5)}
+st = {x for x in range(5)}
+
+print(lst, dct, st)
+</pre>
+    </section>
+    
+    <section>
+      <h2>Loops in Python</h2>
+      <ul>
+        <li>For loop: iterate over sequences.</li>
+        <li>While loop: run while condition is true.</li>
+        <li>Nested loops: loop inside another loop.</li>
+        <li>Use break, continue, pass for control.</li>
+      </ul>
+      <pre># For loop
+for i in range(3):
+    print(i)
+
+# While loop
+x = 0
+while x < 3:
+    print(x)
+    x += 1
+
+# Nested loop
+for i in range(2):
+    for j in range(2):
+        print(i, j)
+
+# Control statements
+for i in range(5):
+    if i == 3:
+        break
+    elif i == 1:
+        continue
+    else:
+        pass
+    print(i)
+</pre>
+    </section>
+    
+    <section>
+      <h2>String Manipulation</h2>
+      <ul>
+        <li>Basic operations: concatenation, repetition, length.</li>
+        <li>Slicing: s[1:4], s[::-1] for reverse.</li>
+        <li>Methods: upper(), lower(), replace(), split().</li>
+        <li>Strings are immutable.</li>
+      </ul>
+      <pre>s = "Python"
+print(s + "3")         # concatenation
+print(s * 2)           # repetition
+print(len(s))          # length
+
+print(s[1:4])          # slicing
+print(s[::-1])         # reverse
+
+print(s.upper())       # method
+print(s.replace("Py", "My"))
+print(s.split("t"))
+</pre>
+    </section>
+    
+    <section>
+      <h2>User Defined Functions</h2>
+      <ul>
+        <li>Defined using def keyword.</li>
+        <li>Can take parameters and return values.</li>
+        <li>Support default and keyword arguments.</li>
+        <li>Promote code reuse and modularity.</li>
+      </ul>
+      <pre># List comprehension\nsquares = [x**2 for x in range(5)]\nprint(squaresdef greet(name="Guest"):
+    return "Hello, " + name
+
+print(greet())              # default
+print(greet(name="PixelSensei"))  # keyword
+)</pre>
+    </section>
+  
+   
+    <section>
+      <h2>Lambda Function</h2>
+      <ul>
+        <li>Anonymous function: lambda x: x + 1.</li>
+        <li>Used for short, throwaway functions.</li>
+        <li>Often used with map(), filter(), reduce().</li>
+        <li>No return keyword—expression is returned.</li>
+      </ul>
+      <pre>add = lambda x: x + 1
+print(add(5))                 # 6
+
+nums = [1, 2, 3]
+squared = list(map(lambda x: x**2, nums))
+print(squared)                # [1, 4, 9]
+</pre>
+    </section>
+  
+   
+    <section>
+      <h2>Importing Modules – Math Module</h2>
+      <ul>
+        <li>Use import math to access math functions.</li>
+        <li>Common functions: sqrt(), pow(), ceil(), floor().</li>
+        <li>Constants: math.pi, math.e.</li>
+        <li>Can import specific functions: from math import sqrt.</li>
+      </ul>
+      <pre>import math
+print(math.sqrt(16))
+print(math.ceil(2.3))
+print(math.pi)
+
+from math import floor
+print(floor(3.9))
+</pre>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Python Course by <a href="https://sushant-crypto.github.io/my-projects/" target="_blank" style="color: inherit; text-decoration: underline;">ℙ𝕚𝕩𝕖𝕝𝕊𝕖𝕟𝕤𝕖𝕚</a>. All rights reserved.
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+    }
+  </script>
+</body>
+</html>
