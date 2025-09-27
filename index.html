@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" class="transition">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python Programming Concepts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .output-block {
+            background-color: #2d3748;
+            color: #e2e8f0;
+            padding: 0.75rem 1rem;
+            border-radius: 0.375rem;
+            margin-top: 0.5rem;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.875rem;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header Section -->
+    <header class="bg-white shadow-sm">
+        <div class="max-w-4xl mx-auto py-6 px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-3xl font-bold text-gray-900">Python Programming Concepts Explained</h1>
+            <p class="mt-2 text-gray-600">A complete breakdown of key topics with code examples and their results.</p>
+
+            <!-- 🌗 Theme Toggle Button -->
+            <div class="text-right mt-4">
+                <button id="theme-toggle" class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-100 px-4 py-2 rounded shadow hover:bg-gray-300 dark:hover:bg-gray-600 transition">
+                    Theme
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="py-10">
+        <section id="topics-container" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8" aria-label="Python Programming Topics">
+            <!-- Topics will be dynamically loaded here -->
+        </section>
+
+        <!-- Navigation Button -->
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 text-center">
+            <a href="newpage.html" class="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-md shadow hover:bg-blue-700 transition">
+                Continue to More Topics →
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 mt-12">
+        <div class="max-w-4xl mx-auto py-6 px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-400">This page is produced to provide basic knowledge of Python programming.</p>
+            <p class="text-gray-400">ℙ𝕚𝕩𝕖𝕝𝕊𝕖𝕟𝕤𝕖𝕚</p>
+        </div>
+    </footer>
+
+    <!-- 🧠 Script to Load Topics -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const topics = [
+                {
+                    number: 13,
+                    title: "13.Introduction to Python",
+                    description: "Python is a high-level, interpreted language known for its simplicity and readability.",
+                    points: [
+                        "Created by Guido van Rossum in the late 1980s.",
+                        "Emphasizes code readability with clean syntax.",
+                        "Supports multiple programming paradigms.",
+                        "Widely used in web, data science, AI, and automation."
+                    ],
+                    code: `# Python program to print Hello World\nprint("Hello, World!")`,
+                    output: `Hello, World!`
+                },
+                {
+                    number: 14,
+                    title: "14.Python Data Types",
+                    description: "Python supports various data types like int, float, str, bool, list, tuple, set, and dict.",
+                    points: [
+                        "int, float, str, and bool are basic types.",
+                        "list, tuple, set, and dict are collection types.",
+                        "Use type() to check a variable’s type.",
+                        "Supports dynamic typing and type conversion."
+                    ],
+                    code: `x = 10\ny = 3.14\nname = "Alice"\nis_valid = True\nprint(type(x), type(y), type(name), type(is_valid))`,
+                    output: `<class 'int'> <class 'float'> <class 'str'> <class 'bool'>`
+                },
+                {
+                    number: 15,
+                    title: "15.Conditional Statements",
+                    description: "Python uses if, elif, and else to control flow based on conditions.",
+                    points: [
+                        "if checks a condition and executes code if true.",
+                        "elif allows multiple conditions to be checked.",
+                        "else runs when all previous conditions are false.",
+                        "Supports nested conditions for complex logic."
+                    ],
+                    code: `num = -5\nif num > 0:\n    print("Positive")\nelif num < 0:\n    print("Negative")\nelse:\n    print("Zero")`,
+                    output: `Negative`
+                },
+                {
+                    number: 16,
+                    title: "16.Loops in Python",
+                    description: "Python supports for and while loops for iteration.",
+                    points: [
+                        "for loop iterates over sequences like lists or ranges.",
+                        "while loop runs as long as a condition is true.",
+                        "Nested loops allow iteration within iteration.",
+                        "Use break and continue to control loop flow."
+                    ],
+                    code: `for i in range(1, 6):\n    print(i, end=" ")\n\ni = 1\nwhile i <= 5:\n    print(i, end=" ")\n    i += 1`,
+                    output: `1 2 3 4 5 1 2 3 4 5`
+                },
+                {
+                    number: 17,
+                    title: "17.User Defined Functions",
+                    description: "Functions are defined using the def keyword and help modularize code.",
+                    points: [
+                        "Use def to define a function with optional parameters.",
+                        "Functions can return values using return.",
+                        "Promotes code reuse and organization.",
+                        "Supports default and keyword arguments."
+                    ],
+                    code: `def greet(name):\n    return f"Hello, {name}!"\n\nprint(greet("Alice"))`,
+                    output: `Hello, Alice!`
+                },
+                {
+                    number: 18,
+                    title: "18.Lambda Function",
+                    description: "Lambda functions are anonymous functions used for short operations.",
+                    points: [
+                        "Defined using the lambda keyword.",
+                        "Used for simple one-line functions.",
+                        "Often used with map(), filter(), and reduce().",
+                        "Cannot contain multiple expressions or statements."
+                    ],
+                    code: `square = lambda x: x * x\nprint(square(5))`,
+                    output: `25`
+                },
+                {
+                    number: 19,
+                    title: "19.Importing Modules – Math Module",
+                    description: "Python's math module provides access to mathematical functions.",
+                    points: [
+                        "Use import math to access the module.",
+                        "Provides functions like sqrt(), pow(), and constants like pi.",
+                        "Helps perform advanced mathematical operations.",
+                        "Can import specific functions using from-import syntax."
+                    ],
+                    code: `import math\nprint(math.sqrt(16))\nprint(math.pi)`,
+                    output: `4.0\n3.141592653589793`
+                }
+            ];
+
+            const container = document.getElementById('topics-container');
+
+            topics.forEach(topic => {
+                const pointsHTML = topic.points
+                    ? `<ul class="mt-3 list-disc list-inside text-gray-600">${topic.points.map(p => `<li>${p}</li>`).join('')}</ul>`
+                    : '';
+
+                const topicElement = document.createElement('div');
+                topicElement.className = 'bg-white rounded-lg shadow-md overflow-hidden';
+
+                topicElement.innerHTML = `
+                    <div class="p-6">
+                        <h2 class="text-2xl font-bold text-gray-800">${topic.title}</h2>
+                        <p class="mt-3 text-gray-600" aria-label="Topic Description">${topic.description}</p>
+                        ${pointsHTML}
+                        <div class="mt-4">
+                            <h3 class="font-semibold text-gray-700 mb-2">Python Code Example:</h3>
+                            <pre class="bg-gray-100 p-4 rounded-md text-gray-800"><code>${topic.code}</code></pre>
+                        </div>
+                        <div class="mt-4">
+                            <h3 class="font-semibold text-gray-700 mb-2">Output:</h3>
+                            <div class="output-block">${topic.output}</div>
+                        </div>
+                    </div>
+                `;
+
+                container.appendChild(topicElement);
+            });
+
+            // 🌙 Theme Toggle Script
+            const toggleBtn = document.getElementById('theme-toggle');
+            const html = document.documentElement;
+
+            if (localStorage.getItem('
